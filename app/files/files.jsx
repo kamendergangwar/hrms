@@ -35,7 +35,13 @@ export default function FIlesView() {
             {...props}
             indicatorStyle={{ backgroundColor: colorScheme === 'light' ? '#0038C0' : 'white' }}
             style={{ backgroundColor: colorScheme === 'light' ? '#fff' : '#000' }}
-            labelStyle={{ color: colorScheme === 'light' ? 'black' : "white" }}
+            labelStyle={{
+      color: colorScheme === 'light' ? '#000000' : '#ffffff', // Explicit hex codes
+      fontWeight: '500',
+      fontSize: 16, // Ensure consistent rendering
+    }}
+    activeColor={colorScheme === 'light' ? '#000000' : '#ffffff'} // Explicitly set active tab label color
+    inactiveColor={colorScheme === 'light' ? '#000000' : '#ffffff'} // Explicitly set inactive tab label color
         />
     );
 
