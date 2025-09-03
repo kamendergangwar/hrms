@@ -9,7 +9,7 @@
     "userInterfaceStyle": "automatic",
     "notification": {
       "icon": "./assets/notif-icon.png",
-      "color": "#fff"
+       "color": "#FFFFFF"
     },
     "ios": {
       "splash": {
