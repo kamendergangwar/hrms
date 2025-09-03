@@ -44,7 +44,7 @@ const RaiseRegRequest = React.memo((props) => {
                 throw new Error('Failed to fetch reasons. Please try again.');
             }
         } catch (error) {
-            conseole.error("Error", error.message);
+            console.error("Error", error.message);
             setDropdownLoading(false);
         }
     };

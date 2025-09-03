@@ -27,6 +27,7 @@ const SecondRoute = ({ userId }) => (
 export default function AttendanceView() {
   const [index, setIndex] = React.useState(0);
   const { colorScheme } = useColorScheme();
+//  console.log('Current color scheme:', colorScheme);
   const [users, setUsers] = React.useState([]);
   const [selectedUser, setSelectedUser] = React.useState('');
 
@@ -50,15 +51,31 @@ export default function AttendanceView() {
     }
   };
 
+  // const renderTabBar = props => (
+  //   // 3. Use the original TabBar component and a 'style' prop
+  //   <TabBar
+  //     {...props}
+  //     indicatorStyle={{ backgroundColor: colorScheme === 'light' ? '#0038C0' : 'white' }}
+  //     style={{ backgroundColor: colorScheme === 'light' ? '#fff' : '#000' }}
+  //     labelStyle={{ color: colorScheme === 'light' ? 'black' : 'white' }}
+      
+  //   />
+  // );
+
   const renderTabBar = props => (
-    // 3. Use the original TabBar component and a 'style' prop
-    <TabBar
-      {...props}
-      indicatorStyle={{ backgroundColor: colorScheme === 'light' ? '#0038C0' : 'white' }}
-      style={{ backgroundColor: colorScheme === 'light' ? '#fff' : '#000' }}
-      labelStyle={{ color: colorScheme === 'light' ? 'black' : 'white' }}
-    />
-  );
+  <TabBar
+    {...props}
+    indicatorStyle={{ backgroundColor: colorScheme === 'light' ? '#0038C0' : '#fff' }}
+    style={{ backgroundColor: colorScheme === 'light' ? '#fff' : '#000' }}
+    labelStyle={{
+      color: colorScheme === 'light' ? '#000000' : '#ffffff', // Explicit hex codes
+      fontWeight: '500',
+      fontSize: 16, // Ensure consistent rendering
+    }}
+    activeColor={colorScheme === 'light' ? '#000000' : '#ffffff'} // Explicitly set active tab label color
+    inactiveColor={colorScheme === 'light' ? '#000000' : '#ffffff'} // Explicitly set inactive tab label color
+  />
+);
 
   const renderItem = item => {
     return (

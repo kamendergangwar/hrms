@@ -330,7 +330,7 @@ const CheckInOutCard = forwardRef((props, ref) => {
         try {
             const response = await Http.post(checkinUrl, payload);
             if (response.ok) {
-                await getCheckInData(post = true);
+                await await getCheckInData(true);
                 const message = isCheckedIn ? 'Check-out successfull!' : 'Check-in successfull!';
                 if (Platform.OS === 'android') {
                     ToastAndroid.show(message, ToastAndroid.SHORT);
@@ -427,10 +427,11 @@ const CheckInOutCard = forwardRef((props, ref) => {
                     <CustomButton
                         title={isCheckedIn ? 'Check-out' : 'Check-in'}
                         handlePress={handleCheckInOut}
-                        containerStyles={`w-[160px] mt-7 rounded-full bg-secondary ${isCheckedIn ? 'bg-[#ff6364]' : 'bg-[#00bda9]'}`}
+                        containerStyles={`w-[160px] mt-7 rounded-full  ${isCheckedIn ? 'bg-[#ff6364]' : 'bg-[#00bda9]'}`}
                         isLoading={loading}
                     />
                 </View>
+              
             </View>
         </>
     );
